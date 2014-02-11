@@ -8,5 +8,5 @@
     android:initialKeyguardLayout="@layout/widget_layout"
     android:resizeMode="vertical|horizontal"
     android:previewImage="@drawable/widget_preview"
-    android:configure="com.brentpanther.bitcoinwidget.SettingsActivity"
+    android:configure="com.negatech.vertcoinwidget.SettingsActivity"
   />

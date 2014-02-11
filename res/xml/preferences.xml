@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:key="bitcoinwidget"
+    android:key="vertcoinwidget"
      >
     <ListPreference
         android:defaultValue="@string/default_refresh_interval"
@@ -22,8 +22,8 @@
         android:defaultValue="@string/default_currency"
         android:persistent="false"
         android:dialogTitle="@string/title_currency"
-        android:entries="@array/currencies_mtgox"
-        android:entryValues="@array/currencies_mtgox"
+        android:entries="@array/currencies_bter"
+        android:entryValues="@array/currencies_bter"
         android:key="@string/key_currency"
         android:title="@string/title_currency" />
     <CheckBoxPreference

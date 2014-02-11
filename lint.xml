@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
     <issue id="ContentDescription">
-        <ignore path="res\layout\widget_layout.xml" />
+        <ignore path="res/layout/widget_layout.xml" />
     </issue>
+    <issue id="InlinedApi" severity="ignore" />
+    <issue id="NewApi" severity="ignore" />
     <issue id="SpUsage">
-        <ignore path="res\layout\widget_layout.xml" />
+        <ignore path="res/layout/widget_layout.xml" />
     </issue>
     <issue id="TypographyEllipsis">
-        <ignore path="res\values\strings.xml" />
+        <ignore path="res/values/strings.xml" />
     </issue>
     <issue id="UselessParent">
-        <ignore path="res\layout\widget_layout.xml" />
+        <ignore path="res/layout/widget_layout.xml" />
     </issue>
 </lint>
