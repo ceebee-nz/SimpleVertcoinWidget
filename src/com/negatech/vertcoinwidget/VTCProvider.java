@@ -60,6 +60,19 @@ public enum VTCProvider
 			JSONObject obj = getJSONObject(String.format("https://data.bter.com/api/1/ticker/vtc_%s", currencyCode));
 			return obj.getString("last");
 		}
+	},
+	VAULTOFSATOSHI(R.array.currencies_vos, "Vault of Satoshi")
+	{
+		@Override
+		public String getValue(String currencyCode) throws Exception
+		{
+			JSONObject obj = getJSONObject(String.format("https://api.vaultofsatoshi.com/public/recent_transactions?order_currency=VTC&payment_currency=%s&count=1", currencyCode));
+			if(obj.getString("status").equals("success"))
+			{
+				return obj.getJSONArray("data").getJSONObject(0).getJSONObject("price").getString("value");
+			}
+			return null;
+		}
 	};
 
 	private final int currencyArrayID;
