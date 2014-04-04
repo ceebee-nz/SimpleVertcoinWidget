@@ -1,6 +1,7 @@
 package com.negatech.vertcoinwidget;
 
 import java.security.KeyStore;
+import java.util.Locale;
 
 import org.apache.http.HttpVersion;
 import org.apache.http.client.HttpClient;
@@ -71,6 +72,26 @@ public enum VTCProvider
 			{
 				return obj.getJSONArray("data").getJSONObject(0).getJSONObject("price").getString("value");
 			}
+			return null;
+		}
+	},
+	PRELUDE(R.array.currencies_prelude, "Prelude")
+	{
+		@Override
+		public String getValue(String currencyCode) throws Exception
+		{
+			String url = "https://api.prelude.io/last/vtc";
+			if(!currencyCode.equals("BTC"))
+			{
+				url = String.format("https://api.prelude.io/last-%s/vtc", currencyCode.toLowerCase(Locale.ENGLISH));
+			}
+			
+			JSONObject obj = getJSONObject(url);
+			if(obj.getString("status").equals("success"))
+			{
+				return obj.getString("last");
+			}
+			
 			return null;
 		}
 	};
